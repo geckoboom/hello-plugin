@@ -1,0 +1,30 @@
+[velox]
+build_args = ['-trimpath', '-ldflags', '-s -X github.com/roadrunner-server/roadrunner/v2/internal/meta.version=v2.10.5 -X github.com/roadrunner-server/roadrunner/v2/internal/meta.buildTime=10:00:00']
+
+[roadrunner]
+ref = "v2023.1.1"
+
+[github]
+    [github.token]
+    token = "${RT_TOKEN}"
+
+    [github.plugins]
+    # ref -> master, commit or tag
+    logger = { ref = "v4.1.3", owner = "roadrunner-server", repository = "logger" }
+    server = { ref = "v4.1.1", owner = "roadrunner-server", repository = "server" }
+    http = { ref = "v4.1.4", owner = "roadrunner-server", repository = "http" }
+
+[gitlab]
+    [gitlab.token]
+    # api, read-api, read-repo
+    token = "${GL_TOKEN}"
+
+    [gitlab.endpoint]
+    endpoint = "https://gitlab.com"
+
+    [gitlab.plugins]
+    hello = { ref = "main", owner = "geckoboom", repository = "geckoboom/hello-plugin", replace="/go/src"}
+
+[log]
+level = "info"
+mode = "development"
