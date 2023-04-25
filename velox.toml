@@ -13,7 +13,7 @@ ref = "v2023.1.1"
     logger = { ref = "v4.1.3", owner = "roadrunner-server", repository = "logger" }
     server = { ref = "v4.1.1", owner = "roadrunner-server", repository = "server" }
     http = { ref = "v4.1.4", owner = "roadrunner-server", repository = "http" }
-    hello = { ref = "master", owner = "geckoboom", repository = "hello-plugin", replace="/go/src"}
+    hello = { ref = "master", owner = "geckoboom", repository = "hello-plugin"}
 
 [log]
 level = "info"

@@ -23,7 +23,7 @@ RUN go get .
 
 WORKDIR /go/bin
 COPY .rr.yaml .
-RUN vx build -c /go/src/velox.toml
+RUN /usr/local/bin/vx build -c /go/src/velox.toml
 RUN /go/bin/rr --version
 
 CMD ["/go/bin/rr"]
